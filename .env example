@@ -3,3 +3,4 @@ DB_PORT=5432
 DB_NAME=elt_practice
 DB_USER=postgres
 DB_PASSWORD=your_password_here
+API_URL=https://jsonplaceholder.typicode.com/users

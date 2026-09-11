@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 
-load_dotenv()  # loads variables from a .env file if you make one
+load_dotenv()
 
 DB_CONFIG = {
     "host": os.getenv("DB_HOST", "localhost"),
@@ -10,3 +10,5 @@ DB_CONFIG = {
     "user": os.getenv("DB_USER", "postgres"),
     "password": os.getenv("DB_PASSWORD", "your_password_here"),
 }
+
+API_URL = os.getenv("API_URL", "https://jsonplaceholder.typicode.com/users")

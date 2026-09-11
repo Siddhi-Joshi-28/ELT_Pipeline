@@ -10,6 +10,7 @@ def load(df, table="raw.source_data"):
     cur.execute(f"TRUNCATE TABLE {table};")  # wipe old raw data before reloading
 
     columns = list(df.columns)
+    df = df.where(pd.notnull(df), None)   # convert NaN -> Python None -> real SQL NULL
     values = [tuple(row) for row in df.itertuples(index=False)]
 
     insert_query = f"INSERT INTO {table} ({', '.join(columns)}) VALUES %s"
